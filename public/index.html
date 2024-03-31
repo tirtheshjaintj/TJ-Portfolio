@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tirthesh Jain Portfolio</title>
+  <link rel="shortcut icon" href="tj.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#222" />
+  <meta name="description" content="I am Tirthesh Jain a programmer who find it fun to make useful apps for myself and the World🌏">
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations()
+    .then(function(registrations) {
+       for(let registration of registrations) {
+          registration.unregister();
+       }
+    });
+ } 
+// Clear cache (not recommended for security reasons)
+caches.keys().then(function(cacheNames) {
+    cacheNames.forEach(function(cacheName) {
+        caches.delete(cacheName);
+        // console.log("Cleared");
+    });
+});
+    </script>
+</body>
+
+</html>
