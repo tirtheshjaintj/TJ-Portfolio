@@ -13,9 +13,9 @@ function App() {
     function handleMove(e) {
       const xVal = e.layerX;
       const yVal = e.layerY;
-      const yRotation = 10 * ((xVal - width / 2) / width);
-      const xRotation = -10 * ((yVal - height / 2) / height);
-      const string = 'perspective(1000px) scale(1.08) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'
+      const yRotation = 12 * ((xVal - width / 2) / width);
+      const xRotation = -12 * ((yVal - height / 2) / height);
+      const string = 'perspective(1000px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'
       el.style.transform = string
     }
     el.addEventListener('mouseout', function () {
@@ -25,7 +25,7 @@ function App() {
       el.style.transform = 'perspective(1000px) scale(0.9) rotateX(0) rotateY(0)'
     })
     el.addEventListener('mouseup', function () {
-      el.style.transform = 'perspective(1000px) scale(1.08) rotateX(0) rotateY(0)'
+      el.style.transform = 'perspective(1000px) scale(1.1) rotateX(0) rotateY(0)'
     })
   }
   function speak() {
@@ -59,9 +59,14 @@ function App() {
   }
 
   useEffect(function () {
+    if(!localStorage.getItem("darkmode")){
+       localStorage.setItem("darkmode","on");
+    }
     tilt();
     speak();
-    mode();
+    if(localStorage.getItem("darkmode")==="on"){
+      mode();
+    }
     textLoad();
     setInterval(textLoad, 12000);
     window.onload = function () {
@@ -110,10 +115,12 @@ function App() {
   }
     </style>`;
       setStatus(1);
+      localStorage.setItem("darkmode","on");
     }
     else {
       modes.innerHTML = "";
       setStatus(0);
+      localStorage.setItem("darkmode","off");
     }
     install();
   }
@@ -222,6 +229,15 @@ function App() {
                 live="https://global.app.mi.com/developer?id=1103244&publisherName=Tirthesh%20Jain&lo=IN&la=en"
                 code="https://play.google.com/store/apps/dev?id=7869079839064125604"
                 img="https://miro.medium.com/v2/resize:fit:828/format:webp/1*LdWKbRYYFY50OTfaRQsMtA.jpeg"
+              />
+
+             <Project
+                title="TJ Notebook"
+                tech="ReactJS NodeJS MongoDB Axios Vercel"
+                description="I'm thrilled to announce the launch of TJ Notebook, a groundbreaking project that harnesses the power of Notes Saving Online Privately seamelessly"
+                live="https://tj-notebook-front.vercel.app"
+                code="https://github.com/tirtheshjaintj/TJ-Notebook"
+                img="https://media.slidesgo.com/storage/22533988/conversions/0-online-notebook-thumb.jpg"
               />
 
               <Project
@@ -359,7 +375,7 @@ function App() {
         <div className="space1"></div>
         <h2>Designed By Tirthesh Jain</h2>
         <div className="container typewrite">
-          <h2 ><span class="text sec-text">I am a Programmer</span></h2>
+          <h2 ><span className="text sec-text">I am a Programmer</span></h2>
         </div>
         <h2>With</h2>
         <a href="#" onClick={install}><i className="fa fa-heart fa-5x fa-border"></i></a>

@@ -10,8 +10,8 @@ export default function Project(props) {
 <h5 className="card-title">{props.title}</h5>
 <h6 className="card-subtitle mb-2">Tech: {props.tech}</h6>
 <p className="card-text">{props.description}</p>
-<a href={props.live} className="btn mr-2" target="_blank"><i className="fa fa-link"></i> Visit Site</a>
-<a href={props.code} className="btn " target="_blank"><i className="fa fa-github"></i> Github</a>
+<a href={props.live} className="btn mr-2"  rel="noreferrer"  target="_blank"><i className="fa fa-link"></i> Visit Site</a>
+<a href={props.code} className="btn " rel="noreferrer"  target="_blank"><i className="fa fa-github"></i> Github</a>
 </div>
 </div>
 </div>
