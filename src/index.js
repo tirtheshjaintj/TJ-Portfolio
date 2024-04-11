@@ -9,20 +9,20 @@ root.render(
     <App />
 );
 
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.getRegistrations()
-    .then(function(registrations) {
-       for(let registration of registrations) {
-          registration.unregister();
-       }
-    });
- } 
-// Clear cache (not recommended for security reasons)
-caches.keys().then(function(cacheNames) {
-    cacheNames.forEach(function(cacheName) {
-        caches.delete(cacheName);
-    });
-});
+// if ('serviceWorker' in navigator) {
+//     navigator.serviceWorker.getRegistrations()
+//     .then(function(registrations) {
+//        for(let registration of registrations) {
+//           registration.unregister();
+//        }
+//     });
+//  } 
+// // Clear cache (not recommended for security reasons)
+// caches.keys().then(function(cacheNames) {
+//     cacheNames.forEach(function(cacheName) {
+//         caches.delete(cacheName);
+//     });
+// });
 
 
 if ('serviceWorker' in navigator) {
