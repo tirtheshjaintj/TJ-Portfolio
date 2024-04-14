@@ -2,11 +2,12 @@ import './App.css';
 import { useState, useEffect } from "react";
 import Navbar from './components/Navbar';
 import Project from './components/Project';
+import Scroller from './components/Scroller';
 
 function App() {
   const [status, setStatus] = useState(0);
   function tilt() {
-    let el = document.getElementsByClassName('tilt')[0];
+    let el = document.getElementById("avatar");
     const height = el.clientHeight;
     const width = el.clientWidth;
     el.addEventListener('mousemove', handleMove);
@@ -58,7 +59,27 @@ function App() {
     }, 8000);
   }
 
+  function scrolling(){
+    const scrollers = document.querySelectorAll(".scroller");
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  addAnimation();
+}
+function addAnimation() {
+  scrollers.forEach((scroller) => {
+    scroller.setAttribute("data-animated", true);
+    const scrollerInner = scroller.querySelector(".scroller__inner");
+    const scrollerContent = Array.from(scrollerInner.children);
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute("aria-hidden", true);
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  });
+}
+  }
+
   useEffect(function () {
+    // scrolling();
     if(!localStorage.getItem("darkmode")){
        localStorage.setItem("darkmode","on");
     }
@@ -77,6 +98,7 @@ function App() {
         });
       }
     };
+    scrolling();
   }, []);
 
   function mode() {
@@ -114,6 +136,7 @@ function App() {
     }
   }
     </style>`;
+
       setStatus(1);
       localStorage.setItem("darkmode","on");
     }
@@ -149,13 +172,13 @@ function App() {
     <>
       <Navbar onclick={install} />
       <div className="box1" onClick={install}>
-        <h1>Programmer, Web Developer & Mobile Developer</h1>
+        <h1 >Programmer, Web Developer & Mobile Developer</h1>
         <p>I am Tirthesh Jain a {new Date().getFullYear() - 2004} y/o programmer who find it fun to make useful apps for myself and the World🌏.</p>
-        <img src="avatar.svg" className="tilt" alt="Tirthesh Jain" id="avatar" title="Tirthesh Jain" />
-        <img src="basee.svg" id="base" alt="Tirthesh Jain" title="Tirthesh Jain" />
+        <img src="avatar.svg" className="tilt" alt="Tirthesh Jain" id="avatar" title="Tirthesh Jain" style={{display: "block"}} />
+        <img src="basee.svg" id="base"  alt="Tirthesh Jain" title="Tirthesh Jain" />
       </div>
       <a name="skill"></a>
-      <div className="box2" onClick={install}>
+      <div className="box2" onClick={install} >
         <h2>Hi, I’m Tirthesh. Nice to meet you.</h2>
         <br />
         <p>I am Tirthesh Jain a {new Date().getFullYear() - 2004}  y/o programmer who find it fun to make useful apps for myself and the World.I have multiple projects in various fields like android app development and web app development.</p>
@@ -188,6 +211,10 @@ function App() {
       </div>
       <div className="space">
       </div>
+<Scroller/>
+<div className="space">
+
+      </div>
       <a name="education"></a>
       <div className="box2" onClick={install}>
         <h2>Let's Know About My Education.</h2>
@@ -195,13 +222,11 @@ function App() {
         <p>I have completed my schooling from B.V.M Chandigarh Road School Ludhiana.
           <br />Now I am pursuing B.tech CSE Batch (2022-2026) from PCTE Ludhiana College.
         </p>
-
       </div>
       <a name="projects"></a>
       <div className="bigbox3" >
         <h2>My Projects</h2>
         <div className="projects">
-
           <div className="container mx-auto mt-4">
             <div className="row">
               <Project
@@ -353,8 +378,9 @@ function App() {
         </div>
 
       </div>
-
+      <div className="space"></div>
       <a name="contact"></a>
+      <Scroller/>
       <div className="space"></div>
       <div className="bigbox2" onClick={install}>
         <div className="box4">
