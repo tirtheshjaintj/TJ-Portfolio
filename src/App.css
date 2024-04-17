@@ -30,70 +30,12 @@ body{
 	margin-top:13px;
 }
 
-.scroller__inner img{
-max-width:300px;
-max-height:200px;
-}
+/* Style for images inside the scroller inner container */
 
-.scroller {
-  text-transform: capitalize;
-  max-width: 100vw;
-}
 
-.scroller__inner {
-  padding-block: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.scroller[data-animated="true"] {
-  overflow: hidden;
-  -webkit-mask: linear-gradient(
-    90deg,
-    transparent,
-    white 5%,
-    white 90%,
-    transparent
-  );
-  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-}
-
-.scroller[data-animated="true"] .scroller__inner {
-  width: max-content;
-  flex-wrap: nowrap;
-  animation: scroll var(--_animation-duration, 30s)
-    var(--_animation-direction, forwards) linear infinite;
-}
-
-.scroller[data-direction="right"] {
-  --_animation-direction: reverse;
-}
-
-.scroller[data-direction="left"] {
-  --_animation-direction: forwards;
-}
-
-.scroller[data-speed="fast"] {
-  --_animation-duration: 30s;
-}
-
-.scroller[data-speed="slow"] {
-  --_animation-duration: 30s;
-}
-
-@keyframes scroll {
-  to {
-    transform: translate(calc(-50% - 0.5rem));
-  }
-}
 
 
 @media(max-width:1024px){
-  .scroller__inner img{
-    max-width:200px;
-    max-height:175px;
-    }
   .home h1{
       font-size: 50px;
   }
