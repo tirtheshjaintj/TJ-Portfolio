@@ -209,13 +209,14 @@ function App() {
         <div className="projects">
           <div className="container mx-auto mt-4">
             <div className="row">
-              <Project
-                title="TJ Code Editor"
-                tech="HTML CSS JavaScript LocalStorage"
-                description="As someone who loves coding, I've always wanted a tool that makes the experience seamless, and I'm thrilled to introduce something that does just that."
-                live="https://tjcode.netlify.app/"
-                code="https://github.com/tirtheshjaintj/WebProjects/tree/master/CodeEditor"
-                img="https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/65bf2a7b229ee6213cc5688c/screenshot_2024-02-04-06-11-09-0000.webp&fit=cover&h=500&w=800"
+              
+            <Project
+                title="TJ Chit Chat"
+                tech="ReactJS NodeJS MongoDB Render Socket.io"
+                description="Introducing TJ Chit Chat, a real-time chatting platform built with the powerful combination of Sockets and MERN stack technologies in it. 💬"
+                live="https://tj-chit-chat-5.onrender.com"
+                code="https://github.com/tirtheshjaintj/TJ-Chit-Chat"
+                img="https://cdn3.vectorstock.com/i/1000x1000/36/97/approved-chat-app-icon-vector-28873697.jpg"
               />
 
               <Project
@@ -243,6 +244,15 @@ function App() {
                 live="https://tj-notebook-front.vercel.app"
                 code="https://github.com/tirtheshjaintj/TJ-Notebook"
                 img="https://media.slidesgo.com/storage/22533988/conversions/0-online-notebook-thumb.jpg"
+              />
+
+<Project
+                title="TJ Code Editor"
+                tech="HTML CSS JavaScript LocalStorage"
+                description="As someone who loves coding, I've always wanted a tool that makes the experience seamless, and I'm thrilled to introduce something that does just that."
+                live="https://tjcode.netlify.app/"
+                code="https://github.com/tirtheshjaintj/WebProjects/tree/master/CodeEditor"
+                img="https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/65bf2a7b229ee6213cc5688c/screenshot_2024-02-04-06-11-09-0000.webp&fit=cover&h=500&w=800"
               />
 
               <Project
