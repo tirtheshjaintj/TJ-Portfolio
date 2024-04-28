@@ -1,63 +1,58 @@
-const CACHE_NAME = 'my-site-cache-v1';
+let CACHE_NAME = 'my-site-cache-v1';
 
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/bundle.js',
-  '/tj.png',
-  '/avatar.svg',
-  '/basee.svg',
-  '/manifest.json',
-  '/avatar.svg'
+  "static/",
+  "index.html",
+  "/tj.png",
+  "/avatar.svg",
+  "/basee.svg",
+  "/manifest.json"
 ];
 
 self.addEventListener('install', function (event) {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function (cache) {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+    // Perform install steps
+    event.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(function (cache) {
+                console.log('Opened cache');
+                return cache.addAll(urlsToCache);
+            })
+    );
 });
 
 self.addEventListener('fetch', function (event) {
-  event.respondWith(
-    caches.match(event.request)
-      .then(function (response) {
-        if (response) {
-          return response;
-        }
-
-        return fetch(event.request)
-          .then(function (response) {
-            if (!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
+    event.respondWith(caches.match(event.request)
+        .then(function (response) {
+            if (response) {
+                return response;
             }
-
-            const responseToCache = response.clone();
-
-            caches.open(CACHE_NAME)
-              .then(function (cache) {
-                cache.put(event.request, responseToCache);
-              });
-
-            return response;
-          });
-      })
-  );
-});
-
-self.addEventListener('activate', function (event) {
-  event.waitUntil(
-    caches.keys().then(function (cacheNames) {
-      return Promise.all(
-        cacheNames.filter(function (cacheName) {
-          return cacheName !== CACHE_NAME;
-        }).map(function (cacheName) {
-          return caches.delete(cacheName);
+            return fetch(event.request);
         })
-      );
-    })
-  );
+    );
 });
+self.addEventListener('install', function (event) {
+    // Perform install steps
+    event.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(function (cache) {
+                console.log('Opened cache');
+                return cache.addAll(urlsToCache);
+            })
+    );
+    self.skipWaiting();
+});
+
+self.addEventListener('activate', function(event) {
+    event.waitUntil(
+      caches.keys().then(function(cacheNames) {
+        return Promise.all(
+          cacheNames.filter(function(cacheName) {
+            return cacheName;
+          }).map(function(cacheName) {
+            return caches.delete(cacheName);
+          })
+        );
+      })
+    );
+  });
+  
