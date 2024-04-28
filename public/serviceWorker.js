@@ -1,8 +1,13 @@
 let CACHE_NAME = 'my-site-cache-v1';
 
 const urlsToCache = [
-    
-];
+"static/",
+"index.html",
+"bundle.js",
+"/tj.png",
+"/avatar.svg",
+"/basee.svg",
+"/manifest.json"];
 
 self.addEventListener('install', function (event) {
     // Perform install steps
@@ -37,17 +42,17 @@ self.addEventListener('install', function (event) {
     self.skipWaiting();
 });
 
-self.addEventListener('activate', function(event) {
-    event.waitUntil(
-      caches.keys().then(function(cacheNames) {
-        return Promise.all(
-          cacheNames.filter(function(cacheName) {
-            return cacheName;
-          }).map(function(cacheName) {
-            return caches.delete(cacheName);
-          })
-        );
-      })
-    );
-  });
+// self.addEventListener('activate', function(event) {
+//     event.waitUntil(
+//       caches.keys().then(function(cacheNames) {
+//         return Promise.all(
+//           cacheNames.filter(function(cacheName) {
+//             return cacheName;
+//           }).map(function(cacheName) {
+//             return caches.delete(cacheName);
+//           })
+//         );
+//       })
+//     );
+//   });
   

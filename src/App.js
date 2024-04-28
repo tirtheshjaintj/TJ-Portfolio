@@ -29,6 +29,7 @@ function App() {
       el.style.transform = 'perspective(1000px) scale(1.1) rotateX(0) rotateY(0)'
     })
   }
+
   function speak() {
     const currentTime = new Date().getHours();
     let greeting = "";
@@ -61,6 +62,7 @@ function App() {
 
  
   useEffect(function () {
+ 
     if(!localStorage.getItem("darkmode")){
        localStorage.setItem("darkmode","on");
     }
@@ -114,8 +116,7 @@ function App() {
       border-left:none;
       border-radius:25px;
     }
-  }
-    </style>`;
+  }</style>`;
 
       setStatus(1);
       localStorage.setItem("darkmode","on");
