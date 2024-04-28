@@ -5,7 +5,7 @@ export default function Project(props) {
 <>
 <div className="col-md-4 ">
 <div className="card project" >
-<img src={props.img} className="card-img-top" loading="lazy" alt={props.title} />
+<img src={props.img} className="card-img-top" alt={props.title} />
 <div className="card-body">
 <h5 className="card-title">{props.title}</h5>
 <h6 className="card-subtitle mb-2">Tech: {props.tech}</h6>
