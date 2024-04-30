@@ -62,7 +62,6 @@ export default function MultipleScrollers() {
           <img src="https://repository-images.githubusercontent.com/264310428/0c412b80-c1f4-11ea-86fb-b572b491f5d6" loading="lazy" alt="skill_badge" title="CPP" />
           <img src="https://res.cloudinary.com/arcjet-media/image/upload/v1608734952/z8hzeszc9eb3sp3vp3qc.jpg" loading="lazy" alt="skill_badge" title="Tailwind" />
           <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-1024.png" loading="lazy" title="CSS" alt="skill_badge" />
-
         </div>
       </div>
 
