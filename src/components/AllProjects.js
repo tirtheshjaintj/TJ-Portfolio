@@ -12,7 +12,7 @@ export default function AllProjects() {
               
             <Project
                 title="TJ Chit Chat"
-                tech="ReactJS NodeJS MongoDB Render Socket.io"
+                tech="ReactJS NodeJS MongoDB ChakraUI Socket.io"
                 description="Introducing TJ Chit Chat, a real-time chatting platform built with the powerful combination of Sockets and MERN stack technologies in it. 💬"
                 live="https://tj-chit-chat-5.onrender.com"
                 code="https://github.com/tirtheshjaintj/TJ-Chit-Chat"
@@ -21,11 +21,20 @@ export default function AllProjects() {
 
               <Project
                 title="TJ GPT AI"
-                tech="HTML CSS JavaScript ChatGPT AJAX PHP"
+                tech="ReactJS NodeJS Gemini Axios ChatGPT"
                 description="I'm thrilled to announce the launch of TJ GPT, a groundbreaking project that harnesses the power of AI to improve your chat experience! 🤖"
                 live="https://tjgpt.netlify.app/"
                 code="https://github.com/tirtheshjaintj/WebProjects/tree/master/React%20JS/tjgpt"
                 img="https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/65db279d4e6242c5d7b34910/screenshot_2024-02-25-11-42-25-0000.webp&fit=cover&h=500&w=800"
+              />
+
+              <Project
+                title="TJ Tube"
+                tech="ReactJS MaterialUI Axios ReactPlayer"
+                description="I'm thrilled to announce the launch of TJ Tube, a groundbreaking project that offers a seamless and fast video browsing experience! 📺"
+                live="https://tjtube.netlify.app/"
+                code="https://github.com/tirtheshjaintj/TJ-Tube"
+                img="https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/66582f71043c34c14004938b/screenshot_2024-05-30-07-49-10-0000.webp&fit=cover&h=500&w=800"
               />
 
               <Project
