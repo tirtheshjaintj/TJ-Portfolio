@@ -9,7 +9,14 @@ export default function AllProjects() {
         <div className="projects">
           <div className="container mx-auto mt-4">
             <div className="row">
-              
+            <Project
+                title="TJ URL Shortener"
+                tech="ReactJS NodeJS MongoDB ChakraUI Socket.io"
+                description="Introducing TJ URL Shortener, a real-time url shortener platform built with the powerful combination of MERN stack technologies in it. 🔗"
+                live="https://tjurl.netlify.app/"
+                code="https://github.com/tirtheshjaintj/TJ-URL-Frontend"
+                img="https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/665a0945d77171000866bfec/screenshot_2024-05-31-17-31-17-0000.webp&fit=cover&h=500&w=800"
+              />
             <Project
                 title="TJ Chit Chat"
                 tech="ReactJS NodeJS MongoDB ChakraUI Socket.io"
