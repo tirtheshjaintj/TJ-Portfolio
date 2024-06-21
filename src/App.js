@@ -1,42 +1,45 @@
-import './App.css';
+import "./App.css";
 import { useState, useEffect } from "react";
-import Navbar from './components/Navbar';
-import Project from './components/Project';
-import Scroller from './components/Scroller';
-import ModeBall from './components/ModeBall';
-import Footer from './components/Footer';
-import Space from './components/Space';
-import AllProjects from './components/AllProjects';
-import Education from './components/Education';
-import Category from './components/Category';
-import Hero from './components/Hero';
-import Modeblock from './components/Modeblock';
+import Navbar from "./components/Navbar";
+import Scroller from "./components/Scroller";
+import ModeBall from "./components/ModeBall";
+import Footer from "./components/Footer";
+import Space from "./components/Space";
+import AllProjects from "./components/AllProjects";
+import Education from "./components/Education";
+import Category from "./components/Category";
+import Hero from "./components/Hero";
+import Modeblock from "./components/Modeblock";
 
 function App() {
-
   const [status, setStatus] = useState(0);
   function tilt() {
-    let el = document.getElementById("avatar");
+    const el = document.getElementById("avatar");
     const height = el.clientHeight;
     const width = el.clientWidth;
-    el.addEventListener('mousemove', handleMove);
+    // Function to handle mouse move
     function handleMove(e) {
-      const xVal = e.layerX;
-      const yVal = e.layerY;
+      const xVal = e.offsetX; // offsetX gives the position relative to the target element
+      const yVal = e.offsetY; // offsetY gives the position relative to the target element
       const yRotation = 12 * ((xVal - width / 2) / width);
       const xRotation = -12 * ((yVal - height / 2) / height);
-      const string = 'perspective(1000px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'
-      el.style.transform = string
+      const transformString = `perspective(1000px) scale(1.1) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+      el.style.transform = transformString;
     }
-    el.addEventListener('mouseout', function () {
-      el.style.transform = 'perspective(1000px) scale(1) rotateX(0) rotateY(0)'
-    })
-    el.addEventListener('mousedown', function () {
-      el.style.transform = 'perspective(1000px) scale(0.9) rotateX(0) rotateY(0)'
-    })
-    el.addEventListener('mouseup', function () {
-      el.style.transform = 'perspective(1000px) scale(1.1) rotateX(0) rotateY(0)'
-    })
+
+    // Event listeners for mouse events
+    el.addEventListener("mousemove", handleMove);
+    el.addEventListener("mouseout", function () {
+      el.style.transform = "perspective(1000px) scale(1) rotateX(0) rotateY(0)";
+    });
+    el.addEventListener("mousedown", function () {
+      el.style.transform =
+        "perspective(1000px) scale(0.9) rotateX(0) rotateY(0)";
+    });
+    el.addEventListener("mouseup", function () {
+      el.style.transform =
+        "perspective(1000px) scale(1.1) rotateX(0) rotateY(0)";
+    });
   }
 
   function speak() {
@@ -53,24 +56,27 @@ function App() {
       const synth = window.speechSynthesis;
       const utterThis = new SpeechSynthesisUtterance(greeting);
       synth.speak(utterThis);
-    }
+    };
   }
 
   const textLoad = () => {
     const text = document.querySelector(".sec-text");
-    setTimeout(() => {
-      text.textContent = " Programmer";
-    }, 0);
-    setTimeout(() => {
-      text.textContent = " Web Developer";
-    }, 4000);
-    setTimeout(() => {
-      text.textContent = " Mobile Developer";
-    }, 8000);
-  }
+    const texts = ["Tirthesh Jain","Programmer", "Web Developer", "Mobile Developer","Book Reader"];
+    let index = 0;
+
+    const setText = () => {
+      text.textContent = texts[index];
+      index = (index + 1) % texts.length;
+    };
+
+    // Set initial text immediately
+    setText();
+
+    // Set text in a loop every 4 seconds
+    setInterval(setText, 4000);
+  };
 
   useEffect(function () {
-
     if (!localStorage.getItem("darkmode")) {
       localStorage.setItem("darkmode", "on");
     }
@@ -82,9 +88,9 @@ function App() {
     textLoad();
     setInterval(textLoad, 12000);
     window.onload = function () {
-      var images = document.getElementsByTagName('img');
+      var images = document.getElementsByTagName("img");
       for (var i = 0; i < images.length; i++) {
-        images[i].addEventListener('contextmenu', (event) => {
+        images[i].addEventListener("contextmenu", (event) => {
           event.preventDefault();
         });
       }
@@ -119,17 +125,28 @@ function App() {
   .box4{
       box-shadow: 0px 0px 5px white;
   }
+      .text.sec-text:before{
+      background-color:#141c3a;
+      border-left: 2px solid white;
+      }
+  .typewrite .text{
+    position: relative;
+    color: white;
+  }
+  .typewrite .text.first-text{
+    color: white;
+  }
   @media (max-width:1024px){
     .minbox,.minbox2{
       border-left:none;
       border-radius:25px;
     }
+      
   }</style>`;
 
       setStatus(1);
       localStorage.setItem("darkmode", "on");
-    }
-    else {
+    } else {
       modes.innerHTML = "";
       setStatus(0);
       localStorage.setItem("darkmode", "off");
@@ -138,7 +155,7 @@ function App() {
   }
 
   let deferredPrompt = null;
-  window.addEventListener('beforeinstallprompt', (e) => {
+  window.addEventListener("beforeinstallprompt", (e) => {
     deferredPrompt = e;
   });
 
@@ -147,15 +164,14 @@ function App() {
       if (deferredPrompt !== null) {
         deferredPrompt.prompt();
         const { outcome } = await deferredPrompt.userChoice;
-        if (outcome === 'accepted') {
+        if (outcome === "accepted") {
           deferredPrompt = null;
         }
       }
-    }
-    catch (err) {
+    } catch (err) {
       console.log(err);
     }
-  };
+  }
 
   return (
     <>
@@ -171,7 +187,7 @@ function App() {
       <Scroller />
       <Footer install={install} />
       <ModeBall mode={mode} />
-      <Modeblock/>
+      <Modeblock />
     </>
   );
 }

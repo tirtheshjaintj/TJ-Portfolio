@@ -21,9 +21,6 @@ export default function Footer({install}) {
         </div>
         <div className="space1"></div>
         <h2>Designed By Tirthesh Jain</h2>
-        <div className="container typewrite">
-          <h2 ><span className="text sec-text">I am a Programmer</span></h2>
-        </div>
         <h2>With</h2>
         <a href="#" onClick={install}><i className="fa fa-heart fa-5x fa-border"></i></a>
       </div>

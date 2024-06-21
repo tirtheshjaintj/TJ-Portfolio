@@ -10,7 +10,15 @@ export default function AllProjects() {
           <div className="container mx-auto mt-4">
             <div className="row">
             <Project
-                title="TJ URL Shortener"
+                title="Buy Me Chai ☕"
+                tech="NextJS ReactJS MongoDB TailWind Razorpay"
+                description="I'm beyond excited to share a project I've been passionately working on: Buy Me A Chai ☕. It’s secure, fast, and built with the latest and greatest technologies!"
+                live="https://buymechai.vercel.app/"
+                code="https://github.com/tirtheshjaintj/TJ-Buy-Me-Chai"
+                img="https://media.licdn.com/dms/image/D5622AQFlPXckFEX5NA/feedshare-shrink_2048_1536/0/1718975987450?e=1721865600&v=beta&t=BCC3YCfPVrpchwAwRkqFLaEzGFcDRmxGC0xUv62CRIA"
+              />
+            <Project
+                title="TJ URL Shortener 🔗"
                 tech="ReactJS NodeJS MongoDB ChakraUI Socket.io"
                 description="Introducing TJ URL Shortener, a real-time url shortener platform built with the powerful combination of MERN stack technologies in it. 🔗"
                 live="https://tjurl.netlify.app/"
@@ -18,16 +26,16 @@ export default function AllProjects() {
                 img="https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/665a0945d77171000866bfec/screenshot_2024-05-31-17-31-17-0000.webp&fit=cover&h=500&w=800"
               />
             <Project
-                title="TJ Chit Chat"
+                title="TJ Chit Chat 💬"
                 tech="ReactJS NodeJS MongoDB ChakraUI Socket.io"
                 description="Introducing TJ Chit Chat, a real-time chatting platform built with the powerful combination of Sockets and MERN stack technologies in it. 💬"
                 live="https://tj-chit-chat-5.onrender.com"
                 code="https://github.com/tirtheshjaintj/TJ-Chit-Chat"
-                img="https://cdn3.vectorstock.com/i/1000x1000/36/97/approved-chat-app-icon-vector-28873697.jpg"
+                img="https://i.ytimg.com/vi/HwCqsOis894/maxresdefault.jpg"
               />
 
               <Project
-                title="TJ GPT AI"
+                title="TJ GPT AI 🤖"
                 tech="ReactJS NodeJS Gemini Axios ChatGPT"
                 description="I'm thrilled to announce the launch of TJ GPT, a groundbreaking project that harnesses the power of AI to improve your chat experience! 🤖"
                 live="https://tjgpt.netlify.app/"
@@ -36,7 +44,7 @@ export default function AllProjects() {
               />
 
               <Project
-                title="TJ Tube"
+                title="TJ Tube 📺"
                 tech="ReactJS MaterialUI Axios ReactPlayer"
                 description="I'm thrilled to announce the launch of TJ Tube, a groundbreaking project that offers a seamless and fast video browsing experience! 📺"
                 live="https://tjtube.netlify.app/"
@@ -45,7 +53,7 @@ export default function AllProjects() {
               />
 
               <Project
-                title="Android Apps"
+                title="Android Apps 📲"
                 tech="JAVA Volley XML WebView"
                 description="I'm thrilled to announce the launch of TJ Android Apps, a groundbreaking project that harnesses the power of Android and make useful apps for the world."
                 live="https://global.app.mi.com/developer?id=1103244&publisherName=Tirthesh%20Jain&lo=IN&la=en"
@@ -54,7 +62,7 @@ export default function AllProjects() {
               />
 
              <Project
-                title="TJ Notebook"
+                title="TJ Notebook 📝"
                 tech="ReactJS NodeJS MongoDB Axios Vercel"
                 description="I'm thrilled to announce the launch of TJ Notebook, a groundbreaking project that harnesses the power of Notes Saving Online Privately seamelessly"
                 live="https://tj-notebook-front.vercel.app"
@@ -63,7 +71,7 @@ export default function AllProjects() {
               />
 
 <Project
-                title="TJ Code Editor"
+                title="TJ Code Editor 🧑‍💻"
                 tech="HTML CSS JavaScript LocalStorage"
                 description="As someone who loves coding, I've always wanted a tool that makes the experience seamless, and I'm thrilled to introduce something that does just that."
                 live="https://tjcode.netlify.app/"
@@ -72,7 +80,7 @@ export default function AllProjects() {
               />
 
               <Project
-                title="TJ Image Search"
+                title="TJ Image Search 🖼️"
                 tech="HTML CSS JavaScript Fetch AJAX"
                 description="With an insatiable passion for creativity and technology, I've developed a powerful image search engine that leverages the incredible Unsplash API as its source."
                 live="https://tjimages.netlify.app/"
@@ -81,7 +89,7 @@ export default function AllProjects() {
               />
 
               <Project
-                title="TJ Weather App"
+                title="TJ Weather App 🌤️"
                 tech="HTML CSS JavaScript OpenWeather API"
                 description="Built with a passion for providing accurate and user-friendly weather information, TJ Weather App brings you real-time updates with a sleek and intuitive design."
                 live="https://tjweather.netlify.app/"
@@ -90,7 +98,7 @@ export default function AllProjects() {
               />
 
               <Project
-                title="TJ PhotoBooth"
+                title="TJ PhotoBooth 📸"
                 tech="HTML CSS JavaScript UserMedia Canvas"
                 description="At TJ PhotoBooth, we're not just capturing moments; we're creating unforgettable experiences using cutting-edge technologies like HTML, CSS, JavaScript, Canvas."
                 live="https://tjcamera.netlify.app/"
@@ -99,7 +107,7 @@ export default function AllProjects() {
               />
 
               <Project
-                title="TJ Mole Game"
+                title="TJ Mole Game 🎮"
                 tech="HTML CSS JavaScript Random"
                 description="TJ Whack-a-Mole isn't just about technology—it's about fun! We've crafted an addictive gameplay experience that stays true to the classic Whack-a-Mole."
                 live="https://tjmole.netlify.app/"
@@ -108,7 +116,7 @@ export default function AllProjects() {
               />
 
               <Project
-                title="TJ Voting System"
+                title="TJ Voting System "
                 tech="HTML CSS PHP MySQL"
                 description="I'm thrilled to announce the launch of TJ Voting System, a groundbreaking project that harnesses the power of Voting. Which makes the process of voting easier and efficient ."
                 live="https://tirtheshjain.000webhostapp.com/hackathon/home.php"

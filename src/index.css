@@ -61,16 +61,18 @@ body{
     80% { box-shadow:0 0 20px goldenrod;  }
     100% { box-shadow:0 0 10px goldenrod; }
   }
-  
+  .typetext{
+    font-size: 60px;
+  }
   .typewrite{
     overflow: hidden;
   }
   .typewrite .text{
     position: relative;
-    color: #ffffff;
+    color: black;
   }
   .typewrite .text.first-text{
-    color: #FFF;
+    color: black;
   }
   .text.sec-text:before{
     content: "";
@@ -79,8 +81,8 @@ body{
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: #6e07f3;
-    border-left: 2px solid #ffffff;
+    background-color: white;
+    border-left: 2px solid black;
     animation: animate 4s steps(12) infinite;
   }
   ::-webkit-scrollbar {
@@ -422,7 +424,9 @@ i{
     margin-top: 50px;
     border-left:none;
 }
-
+.typetext{
+  font-size: 40px;
+}
 }
 @media (max-width:412px){
   .box5 .links{
