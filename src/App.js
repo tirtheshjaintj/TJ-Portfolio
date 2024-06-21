@@ -14,32 +14,27 @@ import Modeblock from "./components/Modeblock";
 function App() {
   const [status, setStatus] = useState(0);
   function tilt() {
-    const el = document.getElementById("avatar");
+    let el = document.getElementById("avatar");
     const height = el.clientHeight;
     const width = el.clientWidth;
-    // Function to handle mouse move
+    el.addEventListener('mousemove', handleMove);
     function handleMove(e) {
-      const xVal = e.offsetX; // offsetX gives the position relative to the target element
-      const yVal = e.offsetY; // offsetY gives the position relative to the target element
+      const xVal = e.layerX;
+      const yVal = e.layerY;
       const yRotation = 12 * ((xVal - width / 2) / width);
       const xRotation = -12 * ((yVal - height / 2) / height);
-      const transformString = `perspective(1000px) scale(1.1) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
-      el.style.transform = transformString;
+      const string = 'perspective(1000px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'
+      el.style.transform = string
     }
-
-    // Event listeners for mouse events
-    el.addEventListener("mousemove", handleMove);
-    el.addEventListener("mouseout", function () {
-      el.style.transform = "perspective(1000px) scale(1) rotateX(0) rotateY(0)";
-    });
-    el.addEventListener("mousedown", function () {
-      el.style.transform =
-        "perspective(1000px) scale(0.9) rotateX(0) rotateY(0)";
-    });
-    el.addEventListener("mouseup", function () {
-      el.style.transform =
-        "perspective(1000px) scale(1.1) rotateX(0) rotateY(0)";
-    });
+    el.addEventListener('mouseout', function () {
+      el.style.transform = 'perspective(1000px) scale(1) rotateX(0) rotateY(0)'
+    })
+    el.addEventListener('mousedown', function () {
+      el.style.transform = 'perspective(1000px) scale(0.9) rotateX(0) rotateY(0)'
+    })
+    el.addEventListener('mouseup', function () {
+      el.style.transform = 'perspective(1000px) scale(1.1) rotateX(0) rotateY(0)'
+    })
   }
 
   function speak() {
