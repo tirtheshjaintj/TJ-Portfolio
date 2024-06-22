@@ -4,7 +4,7 @@ export default function Navbar(props) {
   return (
     <>
           <a name="top"></a>
-     <nav className="navbar navbar-fixed-top  navbar-inverse navbar-dark  navbar-expand-lg " onClick={props.onclick}>
+     <nav className="navbar navbar-fixed-top  navbar-inverse navbar-dark  navbar-expand-lg " onClick={props.onclick} style={{zIndex:"1000"}}>
         <div className="container-fluid">
           <a className="navbar-brand" href="#" id="name">Tirthesh Jain</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">

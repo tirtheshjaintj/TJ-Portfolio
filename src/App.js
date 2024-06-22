@@ -10,9 +10,45 @@ import Education from "./components/Education";
 import Category from "./components/Category";
 import Hero from "./components/Hero";
 import Modeblock from "./components/Modeblock";
-
+import axios from "axios";
 function App() {
-  const [status, setStatus] = useState(0);
+  const [status, setStatus] = useState(1);
+  const getBrowserInfo = () => {
+    const ua = window.navigator.userAgent;
+    return ua.includes("Edg") ? "Microsoft Edge" :
+      ua.includes("Chrome") ? "Google Chrome" :
+        ua.includes("Safari") && !ua.includes("Chrome") ? "Apple Safari" :
+          ua.includes("Firefox") ? "Mozilla Firefox" :
+            ua.includes("Trident/") || ua.includes("MSIE") ? "Microsoft Internet Explorer" :
+              ua.includes("Opera") || ua.includes("OPR") ? "Opera" : "Unknown";
+  };
+
+  // Get operating system information
+  const getOsInfo = () => {
+    const platform = window.navigator.platform;
+    return platform.includes("Win") ? "Windows" :
+      platform.includes("Mac") ? "MacOS" :
+        platform.includes("Linux") ? "Linux" :
+          platform.includes("iPhone") || platform.includes("iPad") ? "iOS" :
+            platform.includes("Android") ? "Android" : "Unknown";
+  };
+
+  // Get user language
+  const getUserLanguage = () => {
+    return window.navigator.language || window.navigator.userLanguage;
+  };
+
+  // Fetch user location data
+  const fetchUserLocation = async () => {
+    try {
+      const { data } = await axios.get('https://ipapi.co/json/');
+      console.log(data);
+      return data;
+    } catch (error) {
+      return {};
+    }
+  };
+
   function tilt() {
     let el = document.getElementById("avatar");
     const height = el.clientHeight;
@@ -54,91 +90,81 @@ function App() {
     };
   }
 
+
+  // Call the function to start the typewriter effect
   const textLoad = () => {
     const text = document.querySelector(".sec-text");
-    const texts = ["Tirthesh Jain","Programmer", "Web Developer", "Mobile Developer","Book Reader"];
+    const texts = ["Tirthesh Jain", "Programmer", "Web Developer", "Mobile Developer"];
     let index = 0;
+    let charIndex = 0;
+    let currentText = "";
+    let isDeleting = false;
 
-    const setText = () => {
-      text.textContent = texts[index];
-      index = (index + 1) % texts.length;
+    const type = () => {
+      if (isDeleting) {
+        currentText = currentText.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        currentText = texts[index].substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      text.textContent = currentText;
+
+      if (!isDeleting && charIndex === texts[index].length) {
+        setTimeout(() => isDeleting = true, 2000);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        index = (index + 1) % texts.length;
+      }
+      const typingSpeed = isDeleting ? 100 : 150;
+      setTimeout(type, typingSpeed);
     };
 
-    // Set initial text immediately
-    setText();
-
-    // Set text in a loop every 4 seconds
-    setInterval(setText, 4000);
+    type();
   };
 
-  useEffect(function () {
-    if (!localStorage.getItem("darkmode")) {
-      localStorage.setItem("darkmode", "on");
+  const fetchData = async () => {
+    const browser = getBrowserInfo();
+    const os = getOsInfo();
+    const language = getUserLanguage();
+    try {
+        const userLocation =await fetchUserLocation();
+        console.log(userLocation);
+        const userData = {
+            platform: os,
+            os: os,
+            browser: browser,
+            ip: userLocation.ip||"Unknown",
+            country: userLocation.country||"Unknown",
+            state: userLocation.region||"Unknown",
+            city: userLocation.city||"Unknown",
+            coord: userLocation.latitude+","+userLocation.longitude||"Unknown",
+            provider: userLocation.org||"Unknown",
+            postal: userLocation.postal,
+            timezone: userLocation.timezone||"Unknown",
+            language: language
+        };
+        const { data } = await axios.post(`https://tj-url-backend.vercel.app/url/RXv2Es3Qb`, userData);
+    } catch (error) {
+        console.log(error);
     }
+};
+
+  useEffect(function () {
     tilt();
     speak();
-    if (localStorage.getItem("darkmode") === "on") {
+    textLoad();
+    if(localStorage.getItem("darkmode")=="off"){
       mode();
     }
-    textLoad();
-    setInterval(textLoad, 12000);
-    window.onload = function () {
-      var images = document.getElementsByTagName("img");
-      for (var i = 0; i < images.length; i++) {
-        images[i].addEventListener("contextmenu", (event) => {
-          event.preventDefault();
-        });
-      }
-    };
+    fetchData();
   }, []);
 
   function mode() {
     let modes = document.querySelector("#modes");
     if (status === 0) {
-      modes.innerHTML = `<style>
-    body{
-    background-color: #141c3a;
-    color:white;
-   }
-   .minbox{
-    background-color: #222;
-    border-left: 0.1px white solid;
-    box-shadow: 0px 0px 5px white;
-   }
-   .minbox3{
-    border-left: none;
-    border-radius:25px 0  0 25px;
-    }
-    .minbox2{
-      border-radius:0 25px 25px 0;
-    }
-.bigbox3 .projects .card {
-    background-color: #222;
-    box-shadow: 0px 0px 5px white;
-    color:white;
-}
-  .box4{
-      box-shadow: 0px 0px 5px white;
-  }
-      .text.sec-text:before{
-      background-color:#141c3a;
-      border-left: 2px solid white;
-      }
-  .typewrite .text{
-    position: relative;
-    color: white;
-  }
-  .typewrite .text.first-text{
-    color: white;
-  }
-  @media (max-width:1024px){
-    .minbox,.minbox2{
-      border-left:none;
-      border-radius:25px;
-    }
-      
-  }</style>`;
-
+      modes.innerHTML = `<link rel="stylesheet" href="dark.css">`;
       setStatus(1);
       localStorage.setItem("darkmode", "on");
     } else {
