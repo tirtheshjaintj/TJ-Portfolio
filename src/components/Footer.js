@@ -16,8 +16,8 @@ export default function Footer({install}) {
         <div className="links" >
           <a href="https://github.com/tirtheshjaintj" target="_blank" rel="noreferrer">  <i className="fa fa-github fa-3x fa-pull-left fa-border"></i></a>
           <a href="https://www.linkedin.com/in/tirtheshjaintj/" target="_blank" rel="noreferrer">  <i className="fa fa-linkedin-square fa-3x fa-pull-left fa-border"></i></a>
-          <a href="https://play.google.com/store/apps/dev?id=7869079839064125604" target="_blank" rel="noreferrer">  <i className="fa fa-android fa-3x fa-pull-left fa-border"></i></a>
-          <a href="https://stackoverflow.com/users/16068951/tirthesh-jain" target="_blank" rel="noreferrer">   <i className="fa fa-stack-overflow fa-3x fa-pull-left fa-border"></i></a>
+          <a href="https://global.app.mi.com/developer?id=1103244&publisherName=Tirthesh%20Jain&lo=IN&la=en" target="_blank" rel="noreferrer">  <i className="fa fa-android fa-3x fa-pull-left fa-border"></i></a>
+          <a href="https://play.google.com/store/apps/dev?id=7869079839064125604" target="_blank" rel="noreferrer">   <i className="fa fa-google fa-3x fa-pull-left fa-border"></i></a>
         </div>
         <div className="space1"></div>
         <h2>Designed By Tirthesh Jain</h2>

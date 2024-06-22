@@ -196,10 +196,8 @@ body {
 }
 
 .bigbox3 .projects .btn:hover{
-  animation: pulse2 10s ease-in-out infinite;
+  animation: pulse2 20s ease-in-out infinite;
   box-shadow: #222 1px 0 10px;
-  border-radius: 30%;
-  transform: scale(1.02) translateY(-10px);
 }
 .scrollimg{
 transition: all 1s;
@@ -282,6 +280,9 @@ img {
   align-items: center;
   text-align: center;
   flex-direction: column;
+}
+.edubox{
+  height: 300px;
 }
 
 .box2 h2,
