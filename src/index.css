@@ -42,11 +42,7 @@ body {
 }
 .project{
   transition: all 1s;
-  box-shadow: 0 0 0 1px rgba(255, 215, 0, 0.8),
-  0 0 0 2px rgba(255, 215, 0, 0.6),
-  0 0 0 4px rgba(255, 215, 0, 0.4),
-  0 0 0 8px rgba(255, 215, 0, 0.2),
-  0 0 0 10px rgba(255, 215, 0, 0.1);
+  min-height:95%;
 }
 .project:hover {
   animation: pulse2 5s ease-in-out infinite !important;
@@ -165,7 +161,7 @@ body {
 }
 .bigbox3 .projects a {
   margin: 5px;
-  transition: all 20s;
+  transition: all 1s;
   font-weight: bolder;
 }
 .bigbox3 .projects p {
@@ -209,17 +205,18 @@ transition: all 1s;
   border-radius: 5px;
   color: #fff;
   font-size: 16px;
+  margin:20px 0px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.download-btn span{
+.download-btn span,.box3 a,.modeball{
   text-decoration: none;
   border:none;
   animation: pulse2 3s ease-in-out infinite;
   animation-play-state: paused;
 }
-.download-btn span:hover{
+.download-btn span:hover,.modeball:hover{
   animation-play-state: running;
 }
 .download-btn{
@@ -239,10 +236,12 @@ transition: all 1s;
   z-index: 1000;
   border-radius: 50%;
 }
-
-.minbox a:hover,.minbox:hover{
+.minbox{
+  transition: all 1s;
+}
+.minbox:hover{
   animation: pulse2 10s ease-in-out infinite;
-  z-index:100;
+  z-index:10;
 }
 h1,
 h2 {

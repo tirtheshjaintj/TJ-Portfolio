@@ -18,7 +18,7 @@ export default function AllProjects() {
                 img="https://media.licdn.com/dms/image/D5622AQFlPXckFEX5NA/feedshare-shrink_2048_1536/0/1718975987450?e=1721865600&v=beta&t=BCC3YCfPVrpchwAwRkqFLaEzGFcDRmxGC0xUv62CRIA"
               />
             <Project
-                title="TJ URL Shortener 🔗"
+                title="TJ URL Short 🔗"
                 tech="ReactJS NodeJS MongoDB ChakraUI Socket.io"
                 description="Introducing TJ URL Shortener, a real-time url shortener platform built with the powerful combination of MERN stack technologies in it. 🔗"
                 live="https://tjurl.netlify.app/"

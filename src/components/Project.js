@@ -3,8 +3,8 @@ import React from 'react'
 export default function Project(props) {
   return (
 <>
-<div className="col-md-4 ">
-<div className="card project" >
+<div className="col-md-6 col-lg-4" >
+<div className="card project">
 <img src={props.img} className="card-img-top"  title={props.title} alt={props.title} />
 <div className="card-body">
 <h5 className="card-title">{props.title}</h5>
