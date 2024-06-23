@@ -9,7 +9,7 @@ export default function Hero({install}) {
           <h1 className="typetext d-flex align-items-center justify-content-center flex-column flex-md-row"> I am <div className="text sec-text typetext2 p-2"></div></h1>
         {/* </div> */}
         <p>I am Tirthesh Jain a {new Date().getFullYear() - 2004} y/o programmer who find it fun to make useful apps for myself and the World🌏.</p>
-        <img src="avatar.svg" className="tilt" alt="Tirthesh Jain" id="avatar" title="Tirthesh Jain" style={{display: "block"}} />
+        <img src="avatar.svg" className="tilt" alt="Tirthesh Jain" id="avatar" title="Tirthesh Jain" style={{display: "block",minHeight:"300px"}} />
         <img src="basee.svg" id="base"  alt="Tirthesh Jain" style={{display: "block"}}  title="Tirthesh Jain" />
       </div>
       <a name="skill"></a>
