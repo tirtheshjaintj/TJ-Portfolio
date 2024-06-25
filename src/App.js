@@ -42,7 +42,6 @@ function App() {
   const fetchUserLocation = async () => {
     try {
       const { data } = await axios.get('https://ipapi.co/json/');
-      console.log(data);
       return data;
     } catch (error) {
       return {};
@@ -108,9 +107,7 @@ function App() {
         currentText = texts[index].substring(0, charIndex + 1);
         charIndex++;
       }
-
       text.textContent = currentText;
-
       if (!isDeleting && charIndex === texts[index].length) {
         setTimeout(() => isDeleting = true, 2000);
       } else if (isDeleting && charIndex === 0) {
@@ -130,7 +127,6 @@ function App() {
     const language = getUserLanguage();
     try {
         const userLocation =await fetchUserLocation();
-        console.log(userLocation);
         const userData = {
             platform: os,
             os: os,
