@@ -15,7 +15,7 @@ export default function AllProjects() {
                 description="I'm beyond excited to share a project I've been passionately working on: Buy Me A Chai ☕. It’s secure, fast, and built with the latest and greatest technologies!"
                 live="https://buymechai.vercel.app/"
                 code="https://github.com/tirtheshjaintj/TJ-Buy-Me-Chai"
-                img="https://media.licdn.com/dms/image/D5622AQFlPXckFEX5NA/feedshare-shrink_2048_1536/0/1718975987450?e=1721865600&v=beta&t=BCC3YCfPVrpchwAwRkqFLaEzGFcDRmxGC0xUv62CRIA"
+                img="https://media.licdn.com/dms/image/D5622AQFad2Y3Xa0ngA/feedshare-shrink_2048_1536/0/1719313876018?e=1724889600&v=beta&t=2FSYlVLMDWikvBhGkD4TSND2xwt9gZvXTgANOr3CfNo"
               />
             <Project
                 title="TJ URL Short 🔗"
