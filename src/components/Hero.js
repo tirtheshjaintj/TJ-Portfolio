@@ -16,8 +16,8 @@ export default function Hero({install}) {
       <div className="box2" onClick={install} >
         <h2>Hi, I’m Tirthesh. Nice to meet you.</h2>
         <div className="d-flex justify-content-center" style={{width:"100%"}}>
-        <a href="TJ_RESUME.pdf" download="Tirthesh Jain.pdf" className="download-btn text-center">
-        <span>Download My Resume<i className="fa fa-download"></i></span></a>
+        <a href="https://drive.google.com/file/d/13iHTiqOKs4043KuGHsJUUmtVCybyvpbQ/view" download="Tirthesh Jain.pdf" className="download-btn text-center">
+        <span>View My Resume<i className="fa fa-eye"></i></span></a>
         </div>
         <p style={{paddingBottom:"20px"}}>I am Tirthesh Jain a {new Date().getFullYear() - 2004}  y/o programmer who find it fun to make useful apps for myself and the World.I have multiple projects in various fields like android app development and web app development.</p>
       </div>
