@@ -11,6 +11,7 @@ import Category from "./components/Category";
 import Hero from "./components/Hero";
 import Modeblock from "./components/Modeblock";
 import axios from "axios";
+import Chatbot from "./components/ChatBot";
 function App() {
   const [status, setStatus] = useState(1);
   const getBrowserInfo = () => {
@@ -162,13 +163,12 @@ function App() {
     if (status === 0) {
       modes.innerHTML = `<link rel="stylesheet" href="dark.css">`;
       setStatus(1);
-      localStorage.setItem("darkmode", "on");
+      localStorage.setItem("darkmode", "on");      
     } else {
       modes.innerHTML = "";
       setStatus(0);
       localStorage.setItem("darkmode", "off");
     }
-    install();
   }
 
   let deferredPrompt = null;
@@ -204,6 +204,7 @@ function App() {
       <Scroller />
       <Footer install={install} />
       <ModeBall mode={mode} />
+      <Chatbot/>
       <Modeblock />
     </>
   );

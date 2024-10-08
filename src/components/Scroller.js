@@ -53,7 +53,7 @@ export default function MultipleScrollers() {
           <img className="scrollimg" src="https://seeklogo.com/images/J/javascript-js-logo-2949701702-seeklogo.com.png" title="Javascript" alt="skill_badge" loading="lazy" />
           <img className="scrollimg" src="logo512.png" title="ReactJS" loading="lazy" />
           <img className="scrollimg" src="https://www.egmcartech.com/wp-content/uploads/2014/06/Android1.jpg" loading="lazy" title="Android" alt="skill_badge" />
-          <img className="scrollimg" src="https://camo.githubusercontent.com/d1f34a845e52e79041c1995394dbad253b4177c1549264ae671bc1b58f04f5d9/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f622f62322f426f6f7473747261705f6c6f676f2e7376672f3235363070782d426f6f7473747261705f6c6f676f2e7376672e706e67"
+          <img className="scrollimg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/800px-Bootstrap_logo.svg.png"
             alt="skill_badge" title="Bootstrap" loading="lazy" />
           <img className="scrollimg" src="https://logodix.com/logo/1764972.png" loading="lazy" alt="skill_badge" title="Node JS" />
           <img className="scrollimg" src="https://user-images.githubusercontent.com/47877911/88288497-d42b0400-cd2e-11ea-819f-e2fa50f5e60b.png" loading="lazy" title="MongoDB" alt="skill_badge" />

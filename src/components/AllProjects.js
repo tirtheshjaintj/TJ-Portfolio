@@ -3,13 +3,22 @@ import Project from './Project';
 export default function AllProjects() {
   return (
     <>
-    <a name="projects"></a>
+      <a name="projects"></a>
       <div className="bigbox3" >
         <h2>My Projects</h2>
         <div className="projects">
           <div className="container mx-auto mt-4">
             <div className="row">
-            <Project
+              <Project
+                title="TJ Bazaar 🛒"
+                tech="TypeScript NodeJS Tailwind Razorpay"
+                description="Introducing TJ Bazaar 🛒, a secure and fast e-commerce platform built with cutting-edge technologies. Dive into a seamless shopping experience!"
+                live="https://tjbazaar.netlify.app/"
+                code="https://github.com/tirtheshjaintj/TJ-Bazaar-Frontend"
+                img="project_pic/TJBazaar.png"
+              />
+
+              <Project
                 title="Buy Me Chai ☕"
                 tech="NextJS ReactJS MongoDB TailWind Razorpay"
                 description="I'm beyond excited to share a project I've been passionately working on: Buy Me A Chai ☕. It’s secure, fast, and built with the latest and greatest technologies!"
@@ -17,7 +26,7 @@ export default function AllProjects() {
                 code="https://github.com/tirtheshjaintj/TJ-Buy-Me-Chai"
                 img="project_pic/BuyMeChai.jpg"
               />
-            <Project
+              <Project
                 title="TJ URL Short 🔗"
                 tech="ReactJS NodeJS MongoDB ChakraUI Socket.io"
                 description="Introducing TJ URL Shortener, a real-time url shortener platform built with the powerful combination of MERN stack technologies in it. 🔗"
@@ -25,7 +34,7 @@ export default function AllProjects() {
                 code="https://github.com/tirtheshjaintj/TJ-URL-Frontend"
                 img="project_pic/ShortURL.png"
               />
-            <Project
+              <Project
                 title="TJ Chit Chat 💬"
                 tech="ReactJS NodeJS MongoDB ChakraUI Socket.io"
                 description="Introducing TJ Chit Chat, a real-time chatting platform built with the powerful combination of Sockets and MERN stack technologies in it. 💬"
@@ -61,7 +70,7 @@ export default function AllProjects() {
                 img="project_pic/TJ_android.webp"
               />
 
-             <Project
+              <Project
                 title="TJ Notebook 📝"
                 tech="ReactJS NodeJS MongoDB Axios Vercel"
                 description="I'm thrilled to announce the launch of TJ Notebook, a groundbreaking project that harnesses the power of Notes Saving Online Privately seamelessly"
@@ -70,7 +79,7 @@ export default function AllProjects() {
                 img="project_pic/TJ_notebook.webp"
               />
 
-<Project
+              <Project
                 title="TJ Code Editor 🧑‍💻"
                 tech="HTML CSS JavaScript LocalStorage"
                 description="As someone who loves coding, I've always wanted a tool that makes the experience seamless, and I'm thrilled to introduce something that does just that."
