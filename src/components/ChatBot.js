@@ -3,7 +3,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { FaHistory, FaPlane } from "react-icons/fa";
 import './ChatBot.css'; // Custom CSS for pixel-perfect adjustments
-const url = "http://localhost:3002";
+const url = "https://portfolio-backend-omega-ten.vercel.app";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
