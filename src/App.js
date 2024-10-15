@@ -94,7 +94,7 @@ function App() {
   // Call the function to start the typewriter effect
   const textLoad = () => {
     const text = document.querySelector(".sec-text");
-    const texts = ["Tirthesh Jain", "Programmer", "Web Developer", "Mobile Developer"];
+    const texts = ["Tirthesh Jain", "Programmer", "Web Developer", "App Developer"];
     let index = 0;
     let charIndex = 0;
     let currentText = "";
