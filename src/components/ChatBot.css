@@ -38,7 +38,7 @@
     transform: translateY(100%);
     transition: transform 0.5s ease;
     bottom:0px;
-    z-index: 100;
+    z-index: 1000;
   }
   
   .chatbot-container.show {
@@ -47,7 +47,7 @@
   
   /* Messages Container */
   .chatbot-messages {
-    height: calc(100vh - 200px);
+    height: 100vh;
     font-size: medium;
     
   }
@@ -71,7 +71,7 @@
   @media(max-width:786px){
     .chatbot-container {
         width: 100%;
-        height: calc(100vh - 100px);
+        height: 100vh;
         max-width: 100vw;
     }
   }

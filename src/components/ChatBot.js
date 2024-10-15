@@ -113,8 +113,8 @@ const Chatbot = () => {
         <form onSubmit={handleSubmit} className="d-flex msgform msgbox">
           <input
             type="text"
-            className="w-100 px-3"
-            placeholder="Type your message"
+            className="w-100 p-3"
+            placeholder="Ask Anything about Tirthesh..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
             required
