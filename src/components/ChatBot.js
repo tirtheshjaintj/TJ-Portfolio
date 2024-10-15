@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { FaHistory, FaPlane } from "react-icons/fa";
+import { FaCross, FaHistory, FaPaperPlane, FaPlane, FaTimes } from "react-icons/fa";
 import './ChatBot.css'; // Custom CSS for pixel-perfect adjustments
 const url = "https://portfolio-backend-omega-ten.vercel.app";
 
@@ -86,13 +86,11 @@ const Chatbot = () => {
       >
         {/* Chatbot Header */}
         <div className="chatbot-header d-flex justify-content-between align-items-center py-2 px-3 border-bottom">
-          <div className="d-flex align-items-center">
+          <div onClick={clearChatHistory}  className="d-flex align-items-center justify-content-center" role="button">
             <h2 className="h5 mb-0 me-2 ">JARVIS</h2>
-            <button onClick={clearChatHistory} className="btn btn-sm text-white">
               <FaHistory className='fs-4' />
-            </button>
           </div>
-          <button onClick={toggleChatbot} className="btn btn-close text-white" />
+          <FaTimes onClick={toggleChatbot} className='fs-4' role="button"/>
         </div>
 
         {/* Chat Messages */}
@@ -104,7 +102,6 @@ const Chatbot = () => {
             <div key={index} className={`d-flex ${msg.sender === 'AI' ? 'justify-content-start' : 'justify-content-end'}`}>
               
               <div className={`p-2 rounded-3 m-2 ${msg.sender === 'AI' ? 'bg-light text-black' : 'bg-primary text-white'}`}>
-                <strong>{msg.sender}</strong>
                 <pre className='msgchat'>{msg.text}</pre>
               </div>
 
@@ -113,16 +110,16 @@ const Chatbot = () => {
         </div>
 
         {/* Input Box */}
-        <form onSubmit={handleSubmit} className="d-flex px-2">
+        <form onSubmit={handleSubmit} className="d-flex msgform msgbox">
           <input
             type="text"
-            className="form-control me-2"
+            className="w-100 px-3"
             placeholder="Type your message"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             required
           />
-          <button type="submit" className="btn btn-primary"><span className='d-flex align-items-center'>Send&nbsp;<FaPlane/></span></button>
+          <button type="submit" className="btn btn-primary"><span className='d-flex align-items-center'><FaPaperPlane className='fs-5'/></span></button>
         </form>
       </div>
     </div>

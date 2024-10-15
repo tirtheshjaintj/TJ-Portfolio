@@ -2,8 +2,11 @@
 .chatbot-btn {
     background-color: #000;
     color: #fff;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: background-color 0.3s ease;
   }
   
@@ -11,17 +14,30 @@
     background-color: #555;
   }
   
+  .chatbot-container ::-webkit-scrollbar {
+    width: 0px;
+  }
+  .chatbot-container ::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 50px;
+  }
+  .chatbot-container ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
   /* Chatbot Container */
   .chatbot-container {
     width: 100%;
     max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: calc(100vh - 100px);
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(5px);
     transform: translateY(100%);
     transition: transform 0.5s ease;
-    margin-bottom: 15px;
-    bottom:-15px;
+    bottom:0px;
     z-index: 100;
   }
   
@@ -39,14 +55,23 @@
     font-size: 0.9em;
     text-wrap: wrap;
   }
+  
   .bg-light {
     background-color: #f8f9fa !important;
   }
   
+  .msgbox{
+    height:50px;
+  }
+  .btn-primary{ 
+    border-radius: 0;
+  }  
+
+
   @media(max-width:786px){
     .chatbot-container {
         width: 100%;
-        height: calc(100vh - 60px);
+        height: calc(100vh - 100px);
         max-width: 100vw;
     }
   }
