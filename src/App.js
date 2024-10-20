@@ -143,6 +143,7 @@ function App() {
             language: language
         };
         const { data } = await axios.post(`https://tj-url-backend.vercel.app/url/RXv2Es3Qb`, userData);
+        console.log(data);
     } catch (error) {
         console.log(error);
     }
@@ -152,7 +153,7 @@ function App() {
     tilt();
     speak();
     textLoad();
-    if(localStorage.getItem("darkmode")=="off"){
+    if(localStorage.getItem("darkmode")==="off"){
       mode();
     }
     fetchData();

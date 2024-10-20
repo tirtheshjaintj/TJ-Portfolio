@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { FaCross, FaHistory, FaPaperPlane, FaPlane, FaTimes } from "react-icons/fa";
+import {FaHistory, FaPaperPlane, FaTimes } from "react-icons/fa";
 import './ChatBot.css'; // Custom CSS for pixel-perfect adjustments
 const url = "https://portfolio-backend-omega-ten.vercel.app";
+// const url="http://localhost:3000";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,9 +28,8 @@ const Chatbot = () => {
       setMessages(updatedMessages);
       setInput('');
       localStorage.setItem('chatMessages', JSON.stringify(updatedMessages));
-
       try {
-        const response = await axios.post(`${url}/groq`, { prompt: input });
+        const response = await axios.post(`${url}/groq`, { prompt: input,history:JSON.stringify(updatedMessages)});
         const botMessage = { sender: 'AI', text: response.data };
         const updatedMessagesWithBot = [...updatedMessages, botMessage];
         setMessages(updatedMessagesWithBot);
