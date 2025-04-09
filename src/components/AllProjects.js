@@ -10,12 +10,21 @@ export default function AllProjects() {
           <div className="container mx-auto mt-4">
             <div className="row">
               <Project
+                title="MindMate 🧠"
+                tech="NodeJS ReactJS Tensorflow Tailwind Razorpay"
+                description="MindMate The ultimate AI-powered study companion for modern learners. From real-time doubt-solving to personalized quizzes, AI interviews, and mental health support."
+                live="https://tjmindmate.netlify.app/"
+                code="https://github.com/tirtheshjaintj/MindMateStudy-Backend"
+                img="project_pic/mindmate.webp"
+              />
+
+              <Project
                 title="TJ Bazaar 🛒"
                 tech="TypeScript NodeJS Tailwind Razorpay"
                 description="Introducing TJ Bazaar 🛒, a secure and fast e-commerce platform built with cutting-edge technologies. Dive into a seamless shopping experience!"
                 live="https://tjbazaar.netlify.app/"
                 code="https://github.com/tirtheshjaintj/TJ-Bazaar-Frontend"
-                img="project_pic/TJBazaar.png"
+                img="project_pic/tjbazaar.png"
               />
 
               <Project

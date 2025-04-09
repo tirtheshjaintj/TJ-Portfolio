@@ -6,7 +6,7 @@ export default function Category({install}) {
       <div className="bigbox1">
         <div className="box3">
           <div className="minbox minbox2">
-            <h3>Mobile Developer</h3>
+            <h3>App Developer</h3>
             <p>I value simple content structure, clean design patterns, and thoughtful interactions.</p>
             <h4>Technologies I Know</h4>
             <p>XML <br />Volley <br />  Recycler View <br /> ROOM Database <br /> WebView <br /> React Native <br /> Java</p>
