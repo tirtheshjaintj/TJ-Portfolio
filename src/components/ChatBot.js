@@ -1,10 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import {FaHistory, FaPaperPlane, FaTimes } from "react-icons/fa";
+import { FaHistory, FaPaperPlane, FaTimes } from "react-icons/fa";
 import './ChatBot.css'; // Custom CSS for pixel-perfect adjustments
 const url = "https://portfolio-backend-omega-ten.vercel.app";
-// const url="http://localhost:3000";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +28,7 @@ const Chatbot = () => {
       setInput('');
       localStorage.setItem('chatMessages', JSON.stringify(updatedMessages));
       try {
-        const response = await axios.post(`${url}/groq`, { prompt: input,history:JSON.stringify(updatedMessages)});
+        const response = await axios.post(`${url}/groq`, { prompt: input, history: JSON.stringify(updatedMessages) });
         const botMessage = { sender: 'AI', text: response.data };
         const updatedMessagesWithBot = [...updatedMessages, botMessage];
         setMessages(updatedMessagesWithBot);
@@ -86,11 +85,11 @@ const Chatbot = () => {
       >
         {/* Chatbot Header */}
         <div className="chatbot-header d-flex justify-content-between align-items-center py-2 px-3 border-bottom">
-          <div onClick={clearChatHistory}  className="d-flex align-items-center justify-content-center" role="button">
+          <div onClick={clearChatHistory} className="d-flex align-items-center justify-content-center" role="button">
             <h2 className="h5 mb-0 me-2 ">JARVIS</h2>
-              <FaHistory className='fs-4' />
+            <FaHistory className='fs-4' />
           </div>
-          <FaTimes onClick={toggleChatbot} className='fs-4' role="button"/>
+          <FaTimes onClick={toggleChatbot} className='fs-4' role="button" />
         </div>
 
         {/* Chat Messages */}
@@ -100,7 +99,7 @@ const Chatbot = () => {
         >
           {messages.map((msg, index) => (
             <div key={index} className={`d-flex ${msg.sender === 'AI' ? 'justify-content-start' : 'justify-content-end'}`}>
-              
+
               <div className={`p-2 rounded-3 m-2 ${msg.sender === 'AI' ? 'bg-light text-black' : 'bg-primary text-white'}`}>
                 <pre className='msgchat'>{msg.text}</pre>
               </div>
@@ -119,7 +118,7 @@ const Chatbot = () => {
             onChange={(e) => setInput(e.target.value)}
             required
           />
-          <button type="submit" className="btn btn-primary"><span className='d-flex align-items-center'><FaPaperPlane className='fs-5'/></span></button>
+          <button type="submit" className="btn btn-primary"><span className='d-flex align-items-center'><FaPaperPlane className='fs-5' /></span></button>
         </form>
       </div>
     </div>

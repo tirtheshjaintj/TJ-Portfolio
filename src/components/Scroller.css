@@ -1,68 +1,32 @@
-.scroller__inner img {
-    max-width: 300px;
-    max-height: 200px;
+.scroller {
+  overflow: hidden;
+  width: 100%;
+  padding:20px;
+}
+.scroller__inner img{
+width:150px;
+height:150px;
+}
+.scroller__inner {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 30s linear infinite;
+}
+
+.scrollimg {
+  margin: 0 20px;
+  object-fit: contain;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
   }
-  
-  
-  /* General scroller styling */
-  .scroller {
-    text-transform: capitalize;
-    max-width: 100vw;
-    display:flex;
-  justify-content: center;
-  align-items: center;
-    flex-direction: row;
-    overflow: hidden; /* Ensures content does not overflow */
-    /* Consider adding touch-action: pan-x; to improve touch scrolling */
+  100% {
+    transform: translateX(-50%);
   }
-  
-  /* Style for inner scroller container */
-  .scroller__inner {
-    padding-block: 1rem;
-    display: flex;
-    flex-wrap: nowrap; /* Change to nowrap for continuous scrolling */
-    gap: 1rem; /* Space between items */
-  }
-  
-  /* Masking effect for smoother transition at edges */
-  .scroller[data-animated="true"] {
-    -webkit-mask: linear-gradient(
-        90deg,
-        transparent,
-        white 5%,
-        white 90%,
-        transparent
-    );
-    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-  }
-  
-  /* Animation and movement properties */
-  .scroller[data-animated="true"] .scroller__inner {
-    width: max-content;
-    animation: scroll var(--_animation-duration, 30s) var(--_animation-direction, forwards) linear infinite;
-  }
-  
-  /* Scroll direction and speed control */
-  .scroller[data-direction="right"] {
-    --_animation-direction: reverse; /* Scrolls right to left */
-  }
-  
-  .scroller[data-direction="left"] {
-    --_animation-direction: forwards; /* Scrolls left to right */
-  }
-  
-  /* Animation duration for different speeds */
-  .scroller[data-speed="fast"] {
-    --_animation-duration: 15s; /* Adjusted for faster scrolling */
-  }
-  
-  .scroller[data-speed="slow"] {
-    --_animation-duration: 30s; /* Slower scrolling */
-  }
-  
-  /* Scroll animation keyframes */
-  @keyframes scroll {
-    to {
-        transform: translateX(-50%); /* Scrolls continuously */
-    }
-  }
+}
+.scroller:hover .scroller__inner {
+  animation-play-state: paused;
+  cursor: grab;
+}

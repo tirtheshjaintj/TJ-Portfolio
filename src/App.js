@@ -127,33 +127,33 @@ function App() {
     const os = getOsInfo();
     const language = getUserLanguage();
     try {
-        const userLocation =await fetchUserLocation();
-        const userData = {
-            platform: os,
-            os: os,
-            browser: browser,
-            ip: userLocation.ip||"Unknown",
-            country: userLocation.country||"Unknown",
-            state: userLocation.region||"Unknown",
-            city: userLocation.city||"Unknown",
-            coord: userLocation.latitude+","+userLocation.longitude||"Unknown",
-            provider: userLocation.org||"Unknown",
-            postal: userLocation.postal,
-            timezone: userLocation.timezone||"Unknown",
-            language: language
-        };
-        const { data } = await axios.post(`https://tj-url-backend.vercel.app/url/RXv2Es3Qb`, userData);
-        console.log(data);
+      const userLocation = await fetchUserLocation();
+      const userData = {
+        platform: os,
+        os: os,
+        browser: browser,
+        ip: userLocation.ip || "Unknown",
+        country: userLocation.country || "Unknown",
+        state: userLocation.region || "Unknown",
+        city: userLocation.city || "Unknown",
+        coord: userLocation.latitude + "," + userLocation.longitude || "Unknown",
+        provider: userLocation.org || "Unknown",
+        postal: userLocation.postal,
+        timezone: userLocation.timezone || "Unknown",
+        language: language
+      };
+      const { data } = await axios.post(`https://tj-url-backend.vercel.app/url/RXv2Es3Qb`, userData);
+      console.log(data);
     } catch (error) {
-        console.log(error);
+      console.log(error);
     }
-};
+  };
 
   useEffect(function () {
     tilt();
     speak();
     textLoad();
-    if(localStorage.getItem("darkmode")==="off"){
+    if (localStorage.getItem("darkmode") === "off") {
       mode();
     }
     fetchData();
@@ -164,7 +164,7 @@ function App() {
     if (status === 0) {
       modes.innerHTML = `<link rel="stylesheet" href="dark.css">`;
       setStatus(1);
-      localStorage.setItem("darkmode", "on");      
+      localStorage.setItem("darkmode", "on");
     } else {
       modes.innerHTML = "";
       setStatus(0);
@@ -205,7 +205,7 @@ function App() {
       <Scroller />
       <Footer install={install} />
       <ModeBall mode={mode} />
-      <Chatbot/>
+      <Chatbot />
       <Modeblock />
     </>
   );
