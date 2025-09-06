@@ -18,7 +18,7 @@ export default function MultipleScrollers() {
 
   return (
     <div className="scroller">
-      <div className="scroller__inner">
+      <div className="scroller_inner">
         {logos.concat(logos).map((src, index) => (
           <img className="scrollimg" src={src} key={index} alt="skill_badge" loading="lazy" />
         ))}

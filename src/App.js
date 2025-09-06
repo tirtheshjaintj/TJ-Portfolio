@@ -60,7 +60,7 @@ function App() {
       const yRotation = 12 * ((xVal - width / 2) / width);
       const xRotation = -12 * ((yVal - height / 2) / height);
       const string = 'perspective(1000px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'
-      el.style.transform = string
+      el.style.transform = string;
     }
     el.addEventListener('mouseout', function () {
       el.style.transform = 'perspective(1000px) scale(1) rotateX(0) rotateY(0)'

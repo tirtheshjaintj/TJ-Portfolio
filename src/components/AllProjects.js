@@ -10,6 +10,14 @@ export default function AllProjects() {
           <div className="container mx-auto mt-4">
             <div className="row">
               <Project
+                title="DhanRakshak 🛡️"
+                tech="ReactNative Node.js Express.js MongoDB LLM"
+                description="DhanRakshak An award-winning financial fraud prevention app that secured 2nd Prize (₹3,00,000) at the National SAFE Hackathon 2025."
+                live="https://drive.google.com/file/d/1xah6t7Ru-lDG6iflba5mHWrwIE6WYP9B/view"
+                code="https://github.com/tirtheshjaintj/DhanRakshak"
+                img="project_pic/DhanRakshak.jpg"
+              />
+              <Project
                 title="MindMate 🧠"
                 tech="NodeJS ReactJS Tensorflow Tailwind Razorpay"
                 description="MindMate The ultimate AI-powered study companion for modern learners. From real-time doubt-solving to personalized quizzes, AI interviews, and mental health support."

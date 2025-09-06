@@ -3,11 +3,11 @@
   width: 100%;
   padding:20px;
 }
-.scroller__inner img{
-width:150px;
-height:150px;
+.scroller_inner img{
+width:175px;
+height:175px;
 }
-.scroller__inner {
+.scroller_inner {
   display: flex;
   width: max-content;
   animation: scroll-left 30s linear infinite;
@@ -26,7 +26,7 @@ height:150px;
     transform: translateX(-50%);
   }
 }
-.scroller:hover .scroller__inner {
+.scroller:hover .scroller_inner {
   animation-play-state: paused;
   cursor: grab;
 }
