@@ -67,11 +67,27 @@ const Chatbot = () => {
     });
   };
 
+  const handleKeyDownClearHistory = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      clearChatHistory();
+    }
+  };
+
+  const handleKeyDownToggle = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleChatbot();
+    }
+  };
+
   return (
     <div>
-      {/* Chatbot Button */}
+      {/* Chatbot Toggle Button */}
       <button
         onClick={toggleChatbot}
+        aria-label="Toggle chat assistant JARVIS"
+        aria-expanded={isOpen}
         className="btn float2 chatbot-btn rounded-circle position-fixed bottom-4 end-4"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -85,11 +101,25 @@ const Chatbot = () => {
       >
         {/* Chatbot Header */}
         <div className="chatbot-header d-flex justify-content-between align-items-center py-2 px-3 border-bottom">
-          <div onClick={clearChatHistory} className="d-flex align-items-center justify-content-center" role="button">
+          <div
+            onClick={clearChatHistory}
+            onKeyDown={handleKeyDownClearHistory}
+            className="d-flex align-items-center justify-content-center"
+            role="button"
+            tabIndex={0}
+            aria-label="Clear chat history"
+          >
             <h2 className="h5 mb-0 me-2 ">JARVIS</h2>
             <FaHistory className='fs-4' />
           </div>
-          <FaTimes onClick={toggleChatbot} className='fs-4' role="button" />
+          <FaTimes
+            onClick={toggleChatbot}
+            onKeyDown={handleKeyDownToggle}
+            className='fs-4'
+            role="button"
+            tabIndex={0}
+            aria-label="Close chat assistant"
+          />
         </div>
 
         {/* Chat Messages */}
@@ -117,8 +147,11 @@ const Chatbot = () => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             required
+            aria-label="Message prompt"
           />
-          <button type="submit" className="btn btn-primary"><span className='d-flex align-items-center'><FaPaperPlane className='fs-5' /></span></button>
+          <button type="submit" className="btn btn-primary" aria-label="Send message">
+            <span className='d-flex align-items-center'><FaPaperPlane className='fs-5' /></span>
+          </button>
         </form>
       </div>
     </div>
