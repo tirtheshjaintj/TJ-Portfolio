@@ -1,0 +1,3 @@
+## 2026-09-29 - Floating Action & Overlay Accessibility Patterns
+**Learning:** Icon-only floating buttons and custom interactive header controls (like closing or clearing chat history) in widget overlays often lack ARIA labels, expanded state indicators, and keyboard event handlers (`Enter`/`Space`), making them completely invisible or unusable to screen readers and keyboard-only users.
+**Action:** Always ensure floating toggles feature `aria-label` and `aria-expanded`, and ensure any non-button interactive elements (`FaTimes`, header divs) include `role="button"`, `tabIndex={0}`, `aria-label`, and `onKeyDown` handlers for `Enter` and `Space`.
