@@ -1,0 +1,3 @@
+## 2026-10-02 - Accessible Interactive Icon-Only Buttons in React ChatWidgets
+**Learning:** Icon-only interactive controls (such as chatbot toggles, close buttons, send actions, and history clear buttons) often lack text labels and keyboard accessibility when rendered as `div` or SVG elements with `onClick` handlers. Wrapping them in semantic `<button type="button">` with descriptive `aria-label` attributes and marking icons with `aria-hidden="true"` makes the widget screen-reader accessible and keyboard navigable without altering visual layout.
+**Action:** When working on interactive overlay widgets (e.g. ChatBot, Modals), always replace bare clickable icons/divs with styled semantic `<button>` elements and clear `aria-label` descriptions.
