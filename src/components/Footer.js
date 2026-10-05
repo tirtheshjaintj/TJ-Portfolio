@@ -14,15 +14,15 @@ export default function Footer({install}) {
        <div className="box5" >
         <h2>My Links</h2>
         <div className="links" >
-          <a href="https://github.com/tirtheshjaintj" target="_blank" rel="noreferrer">  <i className="fa fa-github fa-3x fa-pull-left fa-border"></i></a>
-          <a href="https://www.linkedin.com/in/tirtheshjaintj/" target="_blank" rel="noreferrer">  <i className="fa fa-linkedin-square fa-3x fa-pull-left fa-border"></i></a>
-          <a href="https://global.app.mi.com/developer?id=1103244&publisherName=Tirthesh%20Jain&lo=IN&la=en" target="_blank" rel="noreferrer">  <i className="fa fa-android fa-3x fa-pull-left fa-border"></i></a>
-          <a href="https://play.google.com/store/apps/dev?id=7869079839064125604" target="_blank" rel="noreferrer">   <i className="fa fa-google fa-3x fa-pull-left fa-border"></i></a>
+          <a href="https://github.com/tirtheshjaintj" target="_blank" rel="noreferrer" aria-label="GitHub Profile">  <i className="fa fa-github fa-3x fa-pull-left fa-border"></i></a>
+          <a href="https://www.linkedin.com/in/tirtheshjaintj/" target="_blank" rel="noreferrer" aria-label="LinkedIn Profile">  <i className="fa fa-linkedin-square fa-3x fa-pull-left fa-border"></i></a>
+          <a href="https://global.app.mi.com/developer?id=1103244&publisherName=Tirthesh%20Jain&lo=IN&la=en" target="_blank" rel="noreferrer" aria-label="Xiaomi Developer Profile">  <i className="fa fa-android fa-3x fa-pull-left fa-border"></i></a>
+          <a href="https://play.google.com/store/apps/dev?id=7869079839064125604" target="_blank" rel="noreferrer" aria-label="Google Play Store Developer Profile">   <i className="fa fa-google fa-3x fa-pull-left fa-border"></i></a>
         </div>
         <div className="space1"></div>
         <h2>Designed By Tirthesh Jain</h2>
         <h2>With</h2>
-        <a href="#" onClick={install}><i className="fa fa-heart fa-5x fa-border"></i></a>
+        <a href="#" onClick={install} aria-label="Made with love (Install App)"><i className="fa fa-heart fa-5x fa-border"></i></a>
       </div>
     </>
   )
