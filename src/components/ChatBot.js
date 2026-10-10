@@ -67,14 +67,24 @@ const Chatbot = () => {
     });
   };
 
+  const handleHeaderKeyDown = (e, action) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      action();
+    }
+  };
+
   return (
     <div>
       {/* Chatbot Button */}
       <button
+        type="button"
         onClick={toggleChatbot}
-        className="btn float2 chatbot-btn rounded-circle position-fixed bottom-4 end-4"
+        aria-label={isOpen ? "Close chat assistant" : "Open chat assistant"}
+        title="Chat Assistant"
+        className="btn float2 chatbot-btn rounded-circle position-fixed bottom-4 end-4 d-flex align-items-center justify-content-center"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z" />
         </svg>
       </button>
@@ -85,11 +95,27 @@ const Chatbot = () => {
       >
         {/* Chatbot Header */}
         <div className="chatbot-header d-flex justify-content-between align-items-center py-2 px-3 border-bottom">
-          <div onClick={clearChatHistory} className="d-flex align-items-center justify-content-center" role="button">
+          <div
+            onClick={clearChatHistory}
+            onKeyDown={(e) => handleHeaderKeyDown(e, clearChatHistory)}
+            className="d-flex align-items-center justify-content-center"
+            role="button"
+            tabIndex={0}
+            aria-label="Clear chat history"
+            title="Clear chat history"
+          >
             <h2 className="h5 mb-0 me-2 ">JARVIS</h2>
-            <FaHistory className='fs-4' />
+            <FaHistory className='fs-4' aria-hidden="true" />
           </div>
-          <FaTimes onClick={toggleChatbot} className='fs-4' role="button" />
+          <button
+            type="button"
+            onClick={toggleChatbot}
+            aria-label="Close chat assistant"
+            title="Close chat assistant"
+            className="btn p-0 border-0 d-flex align-items-center justify-content-center"
+          >
+            <FaTimes className='fs-4' aria-hidden="true" />
+          </button>
         </div>
 
         {/* Chat Messages */}
@@ -114,11 +140,12 @@ const Chatbot = () => {
             type="text"
             className="w-100 p-3"
             placeholder="Ask Anything about Tirthesh..."
+            aria-label="Ask anything about Tirthesh"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             required
           />
-          <button type="submit" className="btn btn-primary"><span className='d-flex align-items-center'><FaPaperPlane className='fs-5' /></span></button>
+          <button type="submit" aria-label="Send message" title="Send message" className="btn btn-primary"><span className='d-flex align-items-center'><FaPaperPlane className='fs-5' aria-hidden="true" /></span></button>
         </form>
       </div>
     </div>
