@@ -8,6 +8,7 @@ const url = "https://portfolio-backend-omega-ten.vercel.app";
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState(() => {
     const savedMessages = localStorage.getItem('chatMessages');
     return savedMessages ? JSON.parse(savedMessages) : [{ sender: 'AI', text: 'Hi, how can I help you today?' }];
@@ -21,14 +22,16 @@ const Chatbot = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (input.trim()) {
-      const userMessage = { sender: 'You', text: input };
+    if (input.trim() && !isLoading) {
+      const userPrompt = input.trim();
+      const userMessage = { sender: 'You', text: userPrompt };
       const updatedMessages = [...messages, userMessage];
       setMessages(updatedMessages);
       setInput('');
+      setIsLoading(true);
       localStorage.setItem('chatMessages', JSON.stringify(updatedMessages));
       try {
-        const response = await axios.post(`${url}/groq`, { prompt: input, history: JSON.stringify(updatedMessages) });
+        const response = await axios.post(`${url}/groq`, { prompt: userPrompt, history: JSON.stringify(updatedMessages) });
         const botMessage = { sender: 'AI', text: response.data };
         const updatedMessagesWithBot = [...updatedMessages, botMessage];
         setMessages(updatedMessagesWithBot);
@@ -39,6 +42,8 @@ const Chatbot = () => {
         const updatedMessagesWithError = [...updatedMessages, errorMessage];
         setMessages(updatedMessagesWithError);
         localStorage.setItem('chatMessages', JSON.stringify(updatedMessagesWithError));
+      } finally {
+        setIsLoading(false);
       }
     }
   };
@@ -72,6 +77,7 @@ const Chatbot = () => {
       {/* Chatbot Button */}
       <button
         onClick={toggleChatbot}
+        aria-label={isOpen ? "Close AI chat assistant" : "Open AI chat assistant"}
         className="btn float2 chatbot-btn rounded-circle position-fixed bottom-4 end-4"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -85,11 +91,24 @@ const Chatbot = () => {
       >
         {/* Chatbot Header */}
         <div className="chatbot-header d-flex justify-content-between align-items-center py-2 px-3 border-bottom">
-          <div onClick={clearChatHistory} className="d-flex align-items-center justify-content-center" role="button">
-            <h2 className="h5 mb-0 me-2 ">JARVIS</h2>
+          <button
+            type="button"
+            onClick={clearChatHistory}
+            className="btn p-0 d-flex align-items-center justify-content-center border-0 bg-transparent text-white"
+            aria-label="Clear chat history"
+            title="Clear chat history"
+          >
+            <h2 className="h5 mb-0 me-2">JARVIS</h2>
             <FaHistory className='fs-4' />
-          </div>
-          <FaTimes onClick={toggleChatbot} className='fs-4' role="button" />
+          </button>
+          <button
+            type="button"
+            onClick={toggleChatbot}
+            className="btn p-0 border-0 bg-transparent text-white"
+            aria-label="Close chat assistant"
+          >
+            <FaTimes className='fs-4' />
+          </button>
         </div>
 
         {/* Chat Messages */}
@@ -116,9 +135,24 @@ const Chatbot = () => {
             placeholder="Ask Anything about Tirthesh..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            disabled={isLoading}
             required
+            aria-label="Chat input"
           />
-          <button type="submit" className="btn btn-primary"><span className='d-flex align-items-center'><FaPaperPlane className='fs-5' /></span></button>
+          <button
+            type="submit"
+            className="btn btn-primary"
+            disabled={isLoading || !input.trim()}
+            aria-label="Send message"
+          >
+            <span className='d-flex align-items-center justify-content-center'>
+              {isLoading ? (
+                <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true" />
+              ) : (
+                <FaPaperPlane className='fs-5' />
+              )}
+            </span>
+          </button>
         </form>
       </div>
     </div>
