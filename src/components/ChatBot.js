@@ -72,6 +72,9 @@ const Chatbot = () => {
       {/* Chatbot Button */}
       <button
         onClick={toggleChatbot}
+        aria-label={isOpen ? "Close AI Assistant" : "Open AI Assistant"}
+        aria-expanded={isOpen}
+        title={isOpen ? "Close AI Assistant" : "Open AI Assistant"}
         className="btn float2 chatbot-btn rounded-circle position-fixed bottom-4 end-4"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -85,11 +88,25 @@ const Chatbot = () => {
       >
         {/* Chatbot Header */}
         <div className="chatbot-header d-flex justify-content-between align-items-center py-2 px-3 border-bottom">
-          <div onClick={clearChatHistory} className="d-flex align-items-center justify-content-center" role="button">
-            <h2 className="h5 mb-0 me-2 ">JARVIS</h2>
+          <button
+            type="button"
+            onClick={clearChatHistory}
+            className="btn text-white p-0 d-flex align-items-center justify-content-center border-0 bg-transparent"
+            aria-label="Clear chat history"
+            title="Clear chat history"
+          >
+            <h2 className="h5 mb-0 me-2 text-white">JARVIS</h2>
             <FaHistory className='fs-4' />
-          </div>
-          <FaTimes onClick={toggleChatbot} className='fs-4' role="button" />
+          </button>
+          <button
+            type="button"
+            onClick={toggleChatbot}
+            className="btn text-white p-0 border-0 bg-transparent d-flex align-items-center justify-content-center"
+            aria-label="Close chat"
+            title="Close chat"
+          >
+            <FaTimes className='fs-4' />
+          </button>
         </div>
 
         {/* Chat Messages */}
@@ -118,7 +135,7 @@ const Chatbot = () => {
             onChange={(e) => setInput(e.target.value)}
             required
           />
-          <button type="submit" className="btn btn-primary"><span className='d-flex align-items-center'><FaPaperPlane className='fs-5' /></span></button>
+          <button type="submit" className="btn btn-primary" aria-label="Send message" title="Send message"><span className='d-flex align-items-center'><FaPaperPlane className='fs-5' /></span></button>
         </form>
       </div>
     </div>
