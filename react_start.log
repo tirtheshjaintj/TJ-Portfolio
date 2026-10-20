@@ -1,0 +1,71 @@
+
+> tirtheshjaintj@0.1.0 start /app
+> react-scripts start
+
+(node:57896) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:57896) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled with warnings.
+
+[eslint]
+src/App.js
+  Line 160:6:  React Hook useEffect has missing dependencies: 'fetchData' and 'mode'. Either include them or remove the dependency array                                                                                                                                                                                                                                                 react-hooks/exhaustive-deps
+  Line 204:7:  Anchors must have content and the content must be accessible by a screen reader                                                                                                                                                                                                                                                                                           jsx-a11y/anchor-has-content
+  Line 204:7:  The href attribute is required for an anchor to be keyboard accessible. Provide a valid, navigable address as the href value. If you cannot provide an href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+
+src/components/AllProjects.js
+  Line 6:7:  Anchors must have content and the content must be accessible by a screen reader                                                                                                                                                                                                                                                                                           jsx-a11y/anchor-has-content
+  Line 6:7:  The href attribute is required for an anchor to be keyboard accessible. Provide a valid, navigable address as the href value. If you cannot provide an href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+
+src/components/Education.js
+  Line 6:8:  Anchors must have content and the content must be accessible by a screen reader                                                                                                                                                                                                                                                                                           jsx-a11y/anchor-has-content
+  Line 6:8:  The href attribute is required for an anchor to be keyboard accessible. Provide a valid, navigable address as the href value. If you cannot provide an href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+
+src/components/Footer.js
+  Line 25:9:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+
+src/components/Hero.js
+  Line 15:7:   Anchors must have content and the content must be accessible by a screen reader                                                                                                                                                                                                                                                                                           jsx-a11y/anchor-has-content
+  Line 15:7:   The href attribute is required for an anchor to be keyboard accessible. Provide a valid, navigable address as the href value. If you cannot provide an href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+  Line 19:11:  Using target="_blank" without rel="noreferrer" (which implies rel="noopener") is a security risk in older browsers: see https://mathiasbynens.github.io/rel-noopener/#recommendations                                                                                                                                                                                     react/jsx-no-target-blank
+
+src/components/Navbar.js
+  Line 6:11:   Anchors must have content and the content must be accessible by a screen reader                                                                                                                                                                                                                                                                                           jsx-a11y/anchor-has-content
+  Line 6:11:   The href attribute is required for an anchor to be keyboard accessible. Provide a valid, navigable address as the href value. If you cannot provide an href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+  Line 9:11:   The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md         jsx-a11y/anchor-is-valid
+  Line 16:17:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md         jsx-a11y/anchor-is-valid
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint]
+src/App.js
+  Line 160:6:  React Hook useEffect has missing dependencies: 'fetchData' and 'mode'. Either include them or remove the dependency array                                                                                                                                                                                                                                                 react-hooks/exhaustive-deps
+  Line 204:7:  Anchors must have content and the content must be accessible by a screen reader                                                                                                                                                                                                                                                                                           jsx-a11y/anchor-has-content
+  Line 204:7:  The href attribute is required for an anchor to be keyboard accessible. Provide a valid, navigable address as the href value. If you cannot provide an href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+
+src/components/AllProjects.js
+  Line 6:7:  Anchors must have content and the content must be accessible by a screen reader                                                                                                                                                                                                                                                                                           jsx-a11y/anchor-has-content
+  Line 6:7:  The href attribute is required for an anchor to be keyboard accessible. Provide a valid, navigable address as the href value. If you cannot provide an href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+
+src/components/Education.js
+  Line 6:8:  Anchors must have content and the content must be accessible by a screen reader                                                                                                                                                                                                                                                                                           jsx-a11y/anchor-has-content
+  Line 6:8:  The href attribute is required for an anchor to be keyboard accessible. Provide a valid, navigable address as the href value. If you cannot provide an href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+
+src/components/Footer.js
+  Line 25:9:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+
+src/components/Hero.js
+  Line 15:7:   Anchors must have content and the content must be accessible by a screen reader                                                                                                                                                                                                                                                                                           jsx-a11y/anchor-has-content
+  Line 15:7:   The href attribute is required for an anchor to be keyboard accessible. Provide a valid, navigable address as the href value. If you cannot provide an href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+  Line 19:11:  Using target="_blank" without rel="noreferrer" (which implies rel="noopener") is a security risk in older browsers: see https://mathiasbynens.github.io/rel-noopener/#recommendations                                                                                                                                                                                     react/jsx-no-target-blank
+
+src/components/Navbar.js
+  Line 6:11:   Anchors must have content and the content must be accessible by a screen reader                                                                                                                                                                                                                                                                                           jsx-a11y/anchor-has-content
+  Line 6:11:   The href attribute is required for an anchor to be keyboard accessible. Provide a valid, navigable address as the href value. If you cannot provide an href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+  Line 9:11:   The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md         jsx-a11y/anchor-is-valid
+  Line 16:17:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md         jsx-a11y/anchor-is-valid
+
+webpack compiled with 1 warning
