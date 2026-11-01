@@ -7,6 +7,7 @@ const url = "https://portfolio-backend-omega-ten.vercel.app";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState(() => {
     const savedMessages = localStorage.getItem('chatMessages');
@@ -21,14 +22,16 @@ const Chatbot = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (input.trim()) {
-      const userMessage = { sender: 'You', text: input };
+    if (input.trim() && !isLoading) {
+      const promptText = input;
+      const userMessage = { sender: 'You', text: promptText };
       const updatedMessages = [...messages, userMessage];
       setMessages(updatedMessages);
       setInput('');
+      setIsLoading(true);
       localStorage.setItem('chatMessages', JSON.stringify(updatedMessages));
       try {
-        const response = await axios.post(`${url}/groq`, { prompt: input, history: JSON.stringify(updatedMessages) });
+        const response = await axios.post(`${url}/groq`, { prompt: promptText, history: JSON.stringify(updatedMessages) });
         const botMessage = { sender: 'AI', text: response.data };
         const updatedMessagesWithBot = [...updatedMessages, botMessage];
         setMessages(updatedMessagesWithBot);
@@ -39,6 +42,8 @@ const Chatbot = () => {
         const updatedMessagesWithError = [...updatedMessages, errorMessage];
         setMessages(updatedMessagesWithError);
         localStorage.setItem('chatMessages', JSON.stringify(updatedMessagesWithError));
+      } finally {
+        setIsLoading(false);
       }
     }
   };
@@ -72,9 +77,12 @@ const Chatbot = () => {
       {/* Chatbot Button */}
       <button
         onClick={toggleChatbot}
+        aria-label={isOpen ? "Close JARVIS chat assistant" : "Open JARVIS chat assistant"}
+        aria-expanded={isOpen}
+        title="Chat with JARVIS"
         className="btn float2 chatbot-btn rounded-circle position-fixed bottom-4 end-4"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z" />
         </svg>
       </button>
@@ -82,20 +90,24 @@ const Chatbot = () => {
       {/* Chatbot UI */}
       <div
         className={`chatbot-container ${isOpen ? 'show' : ''} shadow-lg position-fixed end-0 rounded-3`}
+        aria-hidden={!isOpen}
       >
         {/* Chatbot Header */}
         <div className="chatbot-header d-flex justify-content-between align-items-center py-2 px-3 border-bottom">
-          <div onClick={clearChatHistory} className="d-flex align-items-center justify-content-center" role="button">
+          <div onClick={clearChatHistory} className="d-flex align-items-center justify-content-center" role="button" tabIndex={0} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && clearChatHistory()} title="Clear chat history" aria-label="Clear chat history">
             <h2 className="h5 mb-0 me-2 ">JARVIS</h2>
-            <FaHistory className='fs-4' />
+            <FaHistory className='fs-4' aria-hidden="true" />
           </div>
-          <FaTimes onClick={toggleChatbot} className='fs-4' role="button" />
+          <button type="button" className="btn btn-link text-white p-0 border-0" onClick={toggleChatbot} aria-label="Close chat" title="Close chat">
+            <FaTimes className='fs-4' aria-hidden="true" />
+          </button>
         </div>
 
         {/* Chat Messages */}
         <div
           ref={chatContainerRef}
           className="chatbot-messages overflow-auto p-3"
+          aria-live="polite"
         >
           {messages.map((msg, index) => (
             <div key={index} className={`d-flex ${msg.sender === 'AI' ? 'justify-content-start' : 'justify-content-end'}`}>
@@ -106,6 +118,14 @@ const Chatbot = () => {
 
             </div>
           ))}
+          {isLoading && (
+            <div className="d-flex justify-content-start">
+              <div className="p-2 rounded-3 m-2 bg-light text-secondary d-flex align-items-center">
+                <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                <span className="small">JARVIS is thinking...</span>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Input Box */}
@@ -114,11 +134,27 @@ const Chatbot = () => {
             type="text"
             className="w-100 p-3"
             placeholder="Ask Anything about Tirthesh..."
+            aria-label="Message input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            disabled={isLoading}
             required
           />
-          <button type="submit" className="btn btn-primary"><span className='d-flex align-items-center'><FaPaperPlane className='fs-5' /></span></button>
+          <button
+            type="submit"
+            className="btn btn-primary"
+            disabled={isLoading || !input.trim()}
+            aria-label={isLoading ? "Sending message..." : "Send message"}
+            title="Send message"
+          >
+            <span className='d-flex align-items-center'>
+              {isLoading ? (
+                <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              ) : (
+                <FaPaperPlane className='fs-5' aria-hidden="true" />
+              )}
+            </span>
+          </button>
         </form>
       </div>
     </div>
