@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders portfolio and chat assistant', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const nameElement = screen.getByRole('link', { name: /Tirthesh Jain/i });
+  expect(nameElement).toBeInTheDocument();
+  const chatButton = screen.getByRole('button', { name: /Open chat assistant/i });
+  expect(chatButton).toBeInTheDocument();
 });
