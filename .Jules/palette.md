@@ -1,0 +1,3 @@
+## 2025-05-18 - Chatbot Modal Accessibility and Interactive Elements
+**Learning:** Floating widget components (such as chat assistants) often rely on clickable `div` or SVG icons without keyboard focusability, ARIA labels, or dialog roles, making them invisible and inaccessible to screen reader and keyboard-only users.
+**Action:** Replace `div[role="button"]` and bare icons with native `<button>` elements styled using existing framework utilities (`btn btn-link text-reset p-0`), provide descriptive `aria-label` and `aria-expanded` attributes, and assign `role="dialog"` with `aria-live="polite"` on dynamic message areas.
