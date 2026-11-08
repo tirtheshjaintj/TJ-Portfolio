@@ -204,7 +204,7 @@ function App() {
       <a name="contact"></a>
       <Scroller />
       <Footer install={install} />
-      <ModeBall mode={mode} />
+      <ModeBall mode={mode} isDarkMode={status === 1} />
       <Chatbot />
       <Modeblock />
     </>
